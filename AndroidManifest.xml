@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.muse.nextepshim"
+    android:versionCode="13"
+    android:versionName="2.10">
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="35" />
+    <application android:label="NeXtep桌面应答" android:hasCode="true">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="为格窗/NeXtep在澎湃桌面进程内应答工作台查询与设置广播，使其能进入工作台" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+        <meta-data android:name="xposedscope" android:resource="@array/xposed_scope" />
+        <activity
+            android:name=".ToggleActivity"
+            android:label="格窗开关"
+            android:icon="@drawable/ic_toggle"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:exported="true"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
